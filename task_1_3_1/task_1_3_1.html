@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Takk_1_3_1</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+		.container {
+			padding: 20px;
+			background-color: #eee;
+			border: 1px solid #999;
+			overflow: auto;
+		}
+		.left {
+			float: left;
+			border: 1px solid #999;
+			width: 200px;
+			height: 150px; 
+			padding: 20px;
+			background: white;
+		}
+		.right {
+			float: right;
+			border: 1px solid #999;
+			width: 120px;
+			padding: 20px;
+			background: white;
+		}
+		
+		.middle {
+			width: auto;
+			border: 1px solid #999;
+			height: 400px;
+			margin-left: 240px;
+			margin-right: 160px;
+			background: white;
+			padding: 20px;
+			overflow: scroll;
+		}
+
+		.logo {
+			height: 80px;
+			width: 80px;
+			margin-bottom: 20px;
+		}
+		
+		.name {
+			float: right;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="left">
+			<img class="logo" src="1.jpeg">
+			<p class="name">团队名称</p>
+		</div>
+		
+		<div class="right">
+			<img class="logo" src="1.jpeg">
+			<img class="logo" src="1.jpeg">
+			<img class="logo" src="1.jpeg">
+			<img class="logo" src="1.jpeg">
+			<img class="logo" src="1.jpeg">
+		</div>
+		<div class="middle">
+			<p>尝试 position 和 float 的效果，思考它们的异同和应用场景。注意测试不同情况，尤其是极端情况下的效果。图片和文字内容请自行替换，尽可能体现团队的特色。调节浏览器宽度，固定宽度和自适应宽度的效果始终符合预期。改变中间一栏的内容长度，以确保在中间一栏较高和右边一栏较高时，父元素的高度始终为子元素中最高的高度。其他效果图中给出的标识均被正确地实现。</p>
+		</div>
+	</div>
+
+</body>
+</html>
