@@ -1,0 +1,324 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+body {
+	width: 980px;
+	height: 1386px;
+	padding: 0 44px;
+}
+/*页眉*/
+nav {
+	width: 892px;
+	height: 61px;
+	border-bottom: 2px solid #938e8c;
+	font-family: "黑体";
+	font-size: 12px;
+}
+
+nav > div {
+	background-color: #d45d5c;
+	color: #ffffff;
+	height: 61px;
+	width: 110px;
+	position: relative;
+}
+
+nav p {
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+}
+
+nav > span {
+	float: right;
+	margin-top: 49px;
+	color: #d45d5c;
+}
+
+/*banner*/
+header > div {
+	height: 301px;
+	width: 892px;
+	margin: 20px 0;
+}
+
+.banner {
+	width: 641px;
+	height: 301px;
+	background: url(images/banner_03.jpg);
+	float: left;
+}
+
+.green {
+	float: left;
+}
+
+.red {
+	float: right;
+}
+
+.sidebar {
+	width: 203px;
+	height: 301px;
+	border-top: 2px solid #cc8091;
+	float: right;
+}
+
+.title {
+	font-size: 16px;
+	text-decoration: underline;
+	font-family: "Microsoft YaHei";
+	line-height: 30px;
+}
+
+.title span {
+	font-size: 24px;
+
+}
+
+.desc {
+	font-size: 12px;
+	line-height: 10px;
+	font-family: "楷体";
+	color: #676767;
+	display: block;
+}
+
+.num {
+	font-size: 116px;
+	color: #75b86b;
+	font-style: italic;
+	font-family: "Microsoft YaHei";
+}
+.bottom {
+	font-family: "Microsoft YaHei";
+	overflow: hidden;
+}
+.bottomNum {
+	float: left;
+	font-size: 55px;
+	color: #cc8091;	
+}
+.bottomRight {
+	margin-top: 20px;
+}
+.bottomTitle {
+	font-size: 21px;
+	color: #cc8091;
+}
+.bottomDesc {
+	font-size: 12px;
+	color: #676767;
+}
+
+/*article*/
+.row1 {
+	width: 641px;
+	height: 200px;
+}
+
+.row1 > div {
+	float: left;
+	width: 203px;
+	margin-right: 10px;
+}
+
+.row1 ul {
+	list-style-type: none;
+}
+
+.rowContent {
+	font-size: 12px;
+	color: #231815;
+	line-height: 16px;
+	opacity: 0.7;
+	font-family: "宋体";
+}
+.rowTitle {
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: underline;
+	font-family: "Microsoft YaHei";
+	margin-bottom: 5px;
+}
+
+.col1 > .rowTitle {
+	color: #418c59;
+}
+.col2 > .rowTitle {
+	color: #d2994f;
+}
+.col3 > .rowTitle {
+	color: #cc7680;
+}
+
+.rowList {
+	font-size: 12px;
+	color: #231815;
+	line-height: 16px;
+	opacity: 0.7;
+	font-family: "Microsoft YaHei";
+	margin-top: 10px;
+
+}
+.rowList span {
+	color: #cd4a48;
+	font-style: italic;
+}
+
+/*content*/
+.left {
+	width: 415px;
+	height: 680px;
+	float: left;
+}
+.right {
+	width: 458px;
+	height: 680px;
+	float: left;
+	margin-left: 20px;
+}
+
+.head {
+	width: 415px;
+	border-bottom: 2px solid #11456b;
+	font-weight: bold;
+	font-family: "黑体";
+}
+.head span {
+	font-size: 72px;
+	color: #f5e327;
+	font-style: italic;
+}
+.head p {
+	color: #11456b;
+	font-size: 42px;
+}
+.cTitle {
+	font-size: 33px !important;
+}
+.row2Content {
+	font-size: 12px;
+	color: #767777;
+	font-family: "宋体";
+	margin-top: 30px;
+}
+.row2Content span {
+	font-size: 70px;
+	color: #f5e327;
+	font-family: "Microsoft YaHei";
+	float: left;
+}
+.row2Content img {
+	float: right;
+}
+
+.rightTop {
+	background: url(images/bottomr_09.jpg);
+	width: 458px;
+	height: 275px;
+}
+.rightBottom {
+	margin-top: 20px;
+	height: 318px;
+	background: #eeedd6;
+	padding-top: 20px;
+}
+
+.rightBottom ul {
+	height: 138px;
+}
+.rightBottom li {
+	margin: 20px;
+}
+.rightBottom li div {
+	width: 0;
+	border: 8px solid;
+	border-color: transparent transparent #5a5b5b transparent;
+	float: left;
+}
+
+.rightBottom li p {
+	font-size: 16px;
+	color: #5a5b5b;
+	line-height: 20px;
+	font-family: "宋体";
+	margin-left: 30px;
+}
+.botBanner {
+	background: #d45d5c;
+	height: 160px;
+	width: 260px;
+	float: left;
+	padding: 10px 10px;
+	box-sizing: border-box;
+
+}
+.botBanner > span {
+	float: left;
+	font-size: 110px;
+	color: #ffffff;
+	font-family: "Microsoft YaHei";
+
+}
+.botBanner div {
+	float: left;
+	height: 86px;
+	width: 150px;
+	border-left: 2px solid #ffffff;
+	margin-top: 20px;
+	padding: 10px;
+	color: #ffffff;
+}
+.botRi {
+	float: left;
+	height: 160px;
+	width: 198px;
+	color: #5a5b5b;
+	font-family: "黑体";
+	line-height: 16px;
+	font-size: 14px;
+	padding: 20px;
+	box-sizing: border-box;
+}
+.botRi span:first-child {
+	color: #d45d5c;
+	font-style: italic;
+	font-size: 72px;
+	float: left;
+	margin-top: 5px;
+}
+.botRi span:last-child {
+	color: #d45d5c;
+	font-style: italic;
+	font-size: 72px;
+	float: right;
+	margin-top: 5px;
+}
+article::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+/*footer*/
+footer {
+	width: 892px;
+	border-top: 1px solid #838e8c;
+	height: 61px;
+}
+footer span {
+	color: #d45d5c;
+	font-size: 12px;
+	font-family: "黑体";
+	float: right;
+}
+
+
+
+
