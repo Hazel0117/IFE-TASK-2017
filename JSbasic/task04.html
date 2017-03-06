@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task04</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		#controlArea {
+			width: 40%;
+			margin: auto;
+		}
+		#displayArea {
+			display: inline-block;
+			width: 40%;
+			margin: auto;
+		}
+		#displayArea div {
+			background: red;
+			color: white;
+			float: left;
+			padding: 5px;
+			margin: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div id="controlArea">
+		<input type="text" name="number" id="num"/>
+		<input type="button" name="leftIn" value="左侧入"/>
+		<input type="button" name="rightIn" value="右侧入"/>
+		<input type="button" name="leftOut" value="左侧出"/>
+		<input type="button" name="rightOut" value="右侧出"/>
+	<div>
+	<div id="displayArea"></div>
+	<script type="text/javascript">
+		//事件绑定函数
+		function addHandler(element, type, hanlder) {
+			if (element.addEventListener) {
+				element.addEventListener(type, hanlder, false);
+			}
+			else if (element.attachEvent) {
+				element.attachEvent('on' + type, hanlder);
+			}
+			else {
+				element['on' + type]  = hanlder;
+			}
+		}
+
+		var saveList = [];
+		var displayArea = document.getElementById('displayArea');
+		
+		//button点击处理事件
+		function hanlde(ev) {
+			var e = ev || window.event;
+			var ele = e.target || e.srcElement;
+			var nameIn = ele.getAttribute('name');
+			var inputNum = document.getElementById('num').value.trim();
+			if (nameIn===null || nameIn===undefined || nameIn === "number") {
+				return;
+			} else if (!/^[0-9]*$/.test(inputNum)) {
+				//验证输入的有效性
+				document.getElementById('num').value = '';
+				alert('只能输入数字');
+			} else {
+				if (nameIn == "leftIn") {
+					saveList.unshift(inputNum);
+				}
+				if (nameIn == "rightIn") {
+					saveList.push(inputNum);
+				}
+				if (nameIn == "leftOut" && saveList.length > 0) {
+					alert(saveList[0]);
+					saveList.shift();
+				}
+				if (nameIn == "rightOut" && saveList.length > 0) {
+					alert(saveList[saveList.length-1]);
+					saveList.pop();
+				}
+			}
+			//清空展示区所有div
+			displayArea.innerHTML = '';
+			render();
+		}
+
+		//div点击处理事件
+		function handleShow(ev,num) {
+			var e = ev || window.event;
+			var target = e.target || e.srcElement;
+			displayArea.removeChild(target);
+			//删除saveList中对应的值
+			saveList.splice(num,1);
+		}
+
+		
+		//页面渲染函数
+		function render() {
+			for (var i = 0; i < saveList.length; i++) {
+				displayArea.innerHTML += '<div>' + saveList[i] + '</div>';
+			}
+			var showDivs = displayArea.getElementsByTagName('div');
+			//为所有展示区div绑定删除自身的函数
+			for(var j = 0;j < showDivs.length;j++) {
+				addHandler(showDivs[j],'click',function(ev,j) {
+					handleShow(ev,j);
+				});
+			}
+		}
+
+		function init() {
+			var controlArea = document.getElementById('controlArea');
+			addHandler(controlArea,'click',hanlde);
+		}
+
+		//初始化
+		init();
+	</script>
+
+</body>
+</html>
