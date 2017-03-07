@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>task021</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.form {
+			width: 50%;
+			margin: 0 auto;
+		}
+		.display{
+			width: 100%;
+			margin: 50px auto;
+		}
+		.display div {
+			background: lightblue;
+			height: 20px;
+			padding: 5px;
+			margin: 5px;
+			float: left;
+			color: white;
+			text-align: center;
+			vertical-align: center;
+		}
+		.display::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.result {
+			background: pink !important;
+		}
+
+		textarea {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="form">
+		<div>
+			<textarea id="userIn"></textarea>
+			<input type="button"  id="submit" value="请输入内容"/>
+		</div>
+		<div class="display"></div>
+		<div>
+			<input type="text" name="search" id="search"/>
+			<input type="button" id="searchBtn" value="搜索匹配项"/>
+		</div>
+	</div>
+	<script type="text/javascript" src='task06.js'></script>
+
+</body>
+</html>
