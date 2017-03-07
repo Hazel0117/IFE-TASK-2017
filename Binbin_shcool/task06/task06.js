@@ -82,6 +82,7 @@ function renderDisplay(ele) {
 	}
 
 }
+
 //为每个生成的div绑定删除自身的函数
 function delTag() {
 	var displayArea = document.querySelector('.display');

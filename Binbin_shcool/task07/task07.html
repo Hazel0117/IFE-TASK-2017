@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task07</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border: solid 1px black;
+			background-color: white;
+		}
+		.tarversal {
+			background-color: blue;
+		}
+		#inputGroup{
+			border-width: 0;
+			width: 30%;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		<div style="height: 300px; width: 800px">
+			<div style="height: 200px; width: 300px">
+				<div style=" height: 150px; width: 100px"></div>
+				<div style=" height: 150px; width: 100px"></div>
+			</div>
+			<div style="height: 200px; width: 300px">
+				<div style=" height: 150px; width: 100px"></div>
+				<div style=" height: 150px; width: 100px"></div>
+			</div>
+		</div>
+		<div style="height: 300px; width: 800px">
+			<div style="height: 200px;width: 300px">
+				<div style=" height: 150px; width: 100px"></div>
+				<div style=" height: 150px; width: 100px"></div>
+			</div>
+			<div style="height: 200px; width: 300px">
+				<div style=" height: 150px; width: 100px"></div>
+				<div style=" height: 150px; width: 100px"></div>
+			</div>
+		</div>
+		</div>
+		<div id="inputGroup">
+			<input type="button" id="preOrder" value="先序遍历">
+			<input type="button" id="inOrder" value="中序遍历">
+			<input type="button" id="laterOrder" value="后序遍历">
+		</div>
+		<script type="text/javascript" src="task07.js"></script>
+</body>
+</html>
