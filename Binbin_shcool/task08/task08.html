@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task08</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid black;
+			padding: 5px;
+			margin: 5px;
+		}
+		#root {
+			height: 200px;
+		}
+		.second {
+			height: 150px;
+		}
+		.third {
+			height: 100px;
+		}
+		.four {
+			height: 50px;
+		}
+		.five {
+			height: 25px;
+		}
+		#btnGroup {
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="root">
+		super
+		<div class="second">
+		cat
+			<div class="third">
+				Apple
+				<div class="four">Pear</div>
+				<div class="four">Pig</div>
+				<div class="four">Cola</div>
+				<div class="four">Soccer</div>
+			</div>
+			<div class="third">Phone</div>
+			<div class="third">
+				<div class="four">Book</div>
+				<div class="four">School</div>
+			</div>
+		</div>
+		<div class="second">Note
+			<div class="third">Human
+				<div class="four">Code</div>
+				<div class="four">Operate</div>
+				<div class="four">Man</div>
+			</div>
+			<div class="third">Program
+				<div class="four">Element
+					<div class="five">Cat</div>
+				</div>
+				<div class="four">Glass</div>
+			</div>
+		</div>
+		<div class="second">Fish
+		</div>
+	</div>
+	<div id="btnGroup">
+		<input type="button" name="DF" value="深度优先遍历" id="btnDF">
+		<input type="button" name="BF" value="广度优先遍历" id="btnBF">
+		<input type="text" name="condition" placeholder="请输入查找条件" id="condition">
+		<input type="button" name="submit" value="提交搜索条件" id="submit">
+	</div>
+	<script type="text/javascript" src="task08.js"></script>
+</body>
+</html>
