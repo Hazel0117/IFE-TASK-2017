@@ -35,11 +35,12 @@
 		clearInterval(timer);
 		traverseDF(rootNode);
 		var s = searchHandler();
-		if (s) {
-			renderDisplay(nodes);
-		} else {
-			alert('无匹配项');
-		}
+		renderDisplay(nodes);
+		if (!s) {
+			setTimeout(function() {
+					alert('无匹配项');
+				},(nodes.length+1)*500);
+			}
 	});
 
 	//将DOM树，转化为多叉树，存放在nodes数组中
