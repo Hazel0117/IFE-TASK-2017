@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UI组件之浮出层</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.content {
+			width: 100%;
+			height: 2000px;
+		}
+		#floatDiv {
+			position: fixed;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+			background: #eee;
+			z-index: 999;
+			display: none;
+			border-radius: 10px;
+		}
+		#cover {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
+			background: black;
+			opacity: 0.2;
+			z-index: 111;
+		}
+		.header {
+			width: 100%;
+			height: 20%;
+			background: #888888;
+			border-radius: 10px 10px 0 0;
+		}
+		.btnGroup {
+			display: inline-block;
+			width: 100%;
+			text-align: center;
+			
+		}
+		.btnGroup input {
+			font-size: 24px;
+		}
+		#floatDiv p{
+			font-size: 24px;
+			width: 80%;
+			margin: 10%;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="content">
+		<input type="button" value="弹出浮出层" id="alert">
+	</div>
+	<div id="cover"></div>
+	<div id="floatDiv">
+		<div class="header"></div>
+		<p>您确定要这样做么？</p>
+		<div class="btnGroup">
+			<input type="button" value="确定">
+			<input type="button" value="取消">
+		</div>
+	</div>
+	<script type="text/javascript" src="task06.js"></script>
+</body>
+</html>
