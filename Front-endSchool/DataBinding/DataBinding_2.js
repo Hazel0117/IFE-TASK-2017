@@ -1,7 +1,45 @@
+
+//发布订阅模式
+function PubSub() {
+    this.hanlders = {};
+}
+
+PubSub.prototype = {
+    //订阅事件
+    on: function(eventType,hanlder) {
+        var _self = this;
+        //为深层次的属性，订阅事件
+        var keys = eventType.split('.');
+        eventType = keys[keys.length-1];
+
+        if (!(eventType in _self.hanlders)) {
+            _self.hanlders[eventType] = [];
+        }
+        _self.hanlders[eventType].push(hanlder);
+        return this;
+    },
+
+    //发布事件
+    emit: function(eventType) {
+        var _self = this;
+        if (_self.hanlders[eventType] === undefined) {
+            return;
+        }
+        var hanlderArgs = Array.prototype.slice.call(arguments,1);
+        for (let i = 0; i < _self.hanlders[eventType].length; i++) {
+            _self.hanlders[eventType][i].apply(_self,hanlderArgs);
+        }
+        return _self;
+    }
+};
+
+//观察者构造函数
 function Observer(data) {
 	this.data = data;
+    this.pubsub = new PubSub();
     this.init();
 }
+
 
 Observer.prototype = {
 	init : function() {
@@ -16,6 +54,7 @@ Observer.prototype = {
         }
     },
     convert: function(val,key){
+            var _self = this;
 				
 			Object.defineProperty(this.data, key, {
 			configurable: true,
@@ -27,13 +66,17 @@ Observer.prototype = {
 
                     new Observer(val);
                 }
-				console.log('您设置了' + key + ',新的值为' + newVal);
+				console.log('您设置了' + key + ',新的值为' + JSON.stringify(newVal));
+                //输出时，利用JSON将newVal转为字符创，使当newVal为对象时能够在控制台显示
+                
                 val = newVal;
 
                 //当将原有属性改为对象时，将新增对象的属性也加上getter与setter
                 if (typeof val === 'object') {
                     new Observer(val);
                 }
+                //发布类型为key的事件
+                _self.pubsub.emit(key,val);
                 
 			},
             
@@ -46,42 +89,9 @@ Observer.prototype = {
 	},
 
     $watch: function(key,callback) {
-
-        var data = this.data;
-        //使得深层次的对象属性也能够被$watch监听
-        //将传入的key字符串，变为数组
-        //如user.name变为['user','name'];
-        var keys = key.split('.');
-
-        //通过遍历此数组，将defintProperty中的object参数，
-        //变为需要watch属性的上一级
-        //如将data = app3.user
-        for (let i = 0; i < keys.length - 1; i++) {
-            data = data[keys[i]];
-        }
-        //获取真正需要遍历的属性值
-        //如name属性的值
-        var val = data[keys[keys.length-1]];
-       
-        Object.defineProperty(data, keys[keys.length-1], {
-            configurable: true,
-            enumerable: true,
-
-            set: function(newVal) {
-                //回调函数
-                callback(newVal);
-                val = newVal;
-                if (typeof val === 'object') {
-                    new Observer(val);
-                }
-            },
-            get: function() {
-                console.log('您访问了' + key);
-                return val;
-            }
-
-        });
+        this.pubsub.on(key,callback);
     }
+
 };
 
 
@@ -92,8 +102,12 @@ let app1 = new Observer({
 	age: 25
 });
 
+//为age注册两个回调函数
 app1.$watch('age', function(age) {
          console.log('我的年纪变了，现在已经是：'+ age +'岁了');
+ });
+app1.$watch('age', function(age) {
+         console.log('岁月催人老哇！');
  });
 
 
@@ -127,7 +141,9 @@ app3.$watch('user.name', function(name) {
     console.log('我的姓名变了，我现在的名字是' + name);
 });
 
+
 app3.data.user.name = 'li';
 //输出：我的姓名变了，我现在的名字是li
+
 
 
