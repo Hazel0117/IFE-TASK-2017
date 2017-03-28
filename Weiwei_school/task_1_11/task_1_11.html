@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task_1_11</title>
+    <style rel="stylesheet" type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            list-style-type: none;
+        }
+        html {
+            font-size: 20px;
+        }
+        @media only screen and(min-width: 375px) {
+            html {
+                font-size: 25px !important;
+            }
+        }
+        @media only screen and(min-width: 414px) {
+            html {
+                font-size: 26.75px !important;
+            }
+        }
+        @media only screen and(min-width: 481px) {
+            html {
+                font-size: 30px !important;
+            }
+        }
+        @media only screen and(min-width: 569px) {
+            html {
+                font-size: 35px !important;
+            }
+        }
+        @media only screen and(min-width: 641px) {
+            html {
+                font-size: 35px !important;
+            }
+        }
+        @media only screen and(min-width: 800px) {
+            html {
+                font-size: 40px !important;
+            }
+        }
+        header {
+            width: 100%;
+            background-color: #91d4da;
+            font-size: 1em;
+            text-align: center;
+        }
+        nav {
+                width: 100%;
+            }
+        .navigation li, .tags li{
+            width: 20%;
+            float: left;
+            text-align: center;
+            font-size: 0.8em;
+        }
+        .tags::after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+        .banner img {
+            width: 100%;
+        }
+        .row {
+            width: 100%;
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+        .row div::after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+        @media only screen and(min-width: 641px) {
+            .row div {
+                width: 31% !important;
+                margin: 0 0.5% 0 0.5%;
+                height: 80px;
+                font-size: 0.8em;
+                float: left;
+                text-align: center;
+            }
+            .row img {
+                width: 100% !important;
+                float: left;
+            }
+        }
+
+        .row div {
+            width: 96%;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        .row img {
+            width: 40%;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        这是标题
+    </header>
+    <nav>
+        <ul class="navigation">
+            <li>导航</li>
+            <li>导航</li>
+            <li>导航</li>
+            <li>导航</li>
+            <li>导航</li>
+        </ul>
+        <div class="banner">
+            <img src="images/1_02.jpg">
+        </div>
+        <ul class="tags">
+            <li>标签</li>
+            <li>标签</li>
+            <li>标签</li>
+            <li>标签</li>
+            <li>标签</li>
+        </ul>
+    </nav>
+    <article>
+        <div class="row">
+            <div>
+                <img src="images/1_02.jpg"/>
+                <h1>分栏一</h1>
+                <h3>分栏小标题</h3>
+            </div>
+            <div>
+                <img src="images/1_02.jpg"/>
+                <h1>分栏二</h1>
+                <h3>分栏小标题</h3>
+            </div>
+            <div>
+                <img src="images/1_02.jpg"/>
+                <h1>分栏二</h1>
+                <h3>分栏小标题</h3>
+            </div>
+        </div>
+    </article>
+
+</body>
+</html>
